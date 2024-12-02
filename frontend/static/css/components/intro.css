@@ -66,21 +66,39 @@
         }
 
         .intro-form-counter {
-            display: block;
-            text-align: right;
-            font-size: 120%;
-            font-weight: bold;
-            padding-top: 5px;
+            display: flex;
+            font-size: 14px;
+            color: darkgray;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            gap: 8px;
+            width: 100%;
         }
 
-            .intro-form-counter.bad {
-                color: #c41509;
-            }
+        .intro-form-counter-block {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-grow: 1;
+            justify-content: flex-start; 
+        }
 
-            .intro-form-counter.good {
-                color: #53AA68;
-            }
+        .intro-form-counter-block img {
+            width: 30px;
+            height: 30px;
+        }
 
+        .intro-form-counter-block span {
+            text-align: left;
+        }
+
+        .intro-form-counter-display {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+        }
+   
 .post-join {
     margin-top: 30px;
     font-size: 120%;

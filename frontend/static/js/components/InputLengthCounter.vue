@@ -1,14 +1,24 @@
 <template>
-    <span :class="{ bad: counter < minLength, good: counter >= minLength }">
+    <div>
         <slot></slot>
-        <span v-if="counter < minLength" key="poop">💩</span>
-        <span v-if="counter >= minLength && counter < minLength + 100" key="ok">🙂</span>
-        <span v-if="counter >= minLength + 100 && counter < minLength + 300" key="cool">😎</span>
-        <span v-if="counter >= minLength + 300 && counter < minLength + 500" key="awesome">🚀</span>
-        <span v-if="counter >= minLength + 500" key="star">💎🚀👍</span>
-        {{ counter !== null ? counter : "-" }}
-        <span v-if="counter < minLength">&nbsp;&#47;&nbsp;{{ minLength }}</span>
-    </span>
+        <div class="intro-form-counter-block" v-if="counter < 150">
+            <img src="/static/images/symbols-counter/quarter_segment-circle-icon.svg"
+                alt="quarter segment circle icon" />
+            <span>Подробное интро будет полезнее другим членам Клуба для знакомства с вами</span>
+        </div>
+        <div class="intro-form-counter-block" v-if="counter >= 150 && counter < 300">
+            <img src="/static/images/symbols-counter/half_segment-circle-icon.svg" alt="half segment circle icon" />
+            <span>Дополните немного интро, оно станет ещё качественнее</span>
+        </div>
+        <div class="intro-form-counter-block" v-if="counter >= 300">
+            <img src="/static/images/symbols-counter/full-circle-icon.svg" alt="full circle icon" />
+            <span>Отлично, такое интро очень поможет нетворкингу с коллегами по Клубу</span>
+        </div>
+        <div class="intro-form-counter-display">
+            {{ counter !== null ? counter : "-" }}
+            <span>&nbsp;&#47;&nbsp;{{ minLength }}</span>
+        </div>
+    </div>
 </template>
 
 <script>
